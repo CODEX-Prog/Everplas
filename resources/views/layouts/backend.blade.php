@@ -124,7 +124,7 @@
                     <a class="font-w600 text-dual" href="/">
                         <i class="fa fa-circle-notch text-primary"></i>
                         <span class="smini-hide">
-                            <span class="font-w700 font-size-h5">EVERPLAS</span> <span class="font-w400">1.0</span>
+                            <span class="font-w700 font-size-h5">{{ $cominfo->name  }}</span> <span class="font-w400">1.0</span>
                         </span>
                     </a>
                     <!-- END Logo -->
@@ -725,7 +725,7 @@
                             Switcher Technology
                         </div>
                         <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-left">
-                            EVERPLAS ERP
+                            {{ $cominfo->name }} |  ERP 
                         </div>
                     </div>
                 </div>

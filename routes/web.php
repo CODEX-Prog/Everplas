@@ -718,3 +718,9 @@ Route::get('/setting/getbanks/{name?}', 'Setting\BankController@getBanksByName')
 Route::post('/setting/createbank', 'Setting\BankController@create');
 Route::post('/setting/updatebank', 'Setting\BankController@update');
 Route::post('/setting/deletebank', 'Setting\BankController@delete');
+
+// Sends values to layouts views
+app('view')->composer(array('layouts.backend', 'auth.login'), function($view){
+    $cominfo = CompnayInfo::all()->first();
+    $view->with(compact('cominfo'));
+ });

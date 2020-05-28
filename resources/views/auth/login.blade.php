@@ -85,13 +85,14 @@ MAIN CONTENT LAYOUT
                             <!-- Header -->
                             <div class="text-center">
                                 <p class="mb-2">
-                                    <i class="fa fa-2x fa-circle-notch text-primary"></i>
+                                    <!-- <i class="fa fa-2x fa-circle-notch text-primary"></i> -->
+                                    <img src="{{ $cominfo->logo }}" width="200px" height="200px" alt="">
                                 </p>
                                 <h1 class="h4 mb-1">
                                     Sign In
                                 </h1>
                                 <h2 class="h6 font-w400 text-muted mb-3">
-                                    A perfect match for your project
+                                    <!-- A perfect match for your project -->
                                 </h2>
                             </div>
                             <!-- END Header -->
@@ -142,10 +143,10 @@ MAIN CONTENT LAYOUT
                             </form>
                             <!-- END Sign In Form -->
                             <div class="row text-center mt-4">
-                                <div class="col-12">
+                                <!-- <div class="col-12">
                                     <span>Don't have a account?</span>
                                     <span><a href="{{ route('register') }}">sign up</a></span>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -154,7 +155,7 @@ MAIN CONTENT LAYOUT
 
                 <!-- Footer -->
                 <div class="font-size-sm text-center text-muted py-3">
-                    <strong>OneUI 4.3</strong> &copy; <span data-toggle="year-copy"></span>
+                <span class="font-w700 font-size-h5"><strong>{{ $cominfo->name }} - </strong> </span><span class="font-w400"> Powered by Switcher Technology </span> &copy; <span data-toggle="year-copy"></span>
                 </div>
                 <!-- END Footer -->
             </div>
