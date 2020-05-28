@@ -75,7 +75,7 @@
         <div class="block">
         <div class="block-header">
     
-            <h3 class="block-title"> #{{ $prefix->receiving }} </h3>
+            <h3 class="block-title"> #{{ $prefix->receiving. $idFormat  }} </h3>
   
             <div class="block-options">
                 <button type="button" class="btn-block-option" onclick="One.helpers('print');">
