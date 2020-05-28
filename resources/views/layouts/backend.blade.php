@@ -124,7 +124,7 @@
                     <a class="font-w600 text-dual" href="/">
                         <i class="fa fa-circle-notch text-primary"></i>
                         <span class="smini-hide">
-                            <span class="font-w700 font-size-h5">ERP</span> <span class="font-w400">1.0</span>
+                            <span class="font-w700 font-size-h5">EVERPLAS</span> <span class="font-w400">1.0</span>
                         </span>
                     </a>
                     <!-- END Logo -->
@@ -722,10 +722,10 @@
                 <div class="content py-3">
                     <div class="row font-size-sm">
                         <div class="col-sm-6 order-sm-2 py-1 text-center text-sm-right">
-                            Bahrain Company
+                            Switcher Technology
                         </div>
                         <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-left">
-                             Company ERP v1.0
+                            EVERPLAS ERP
                         </div>
                     </div>
                 </div>
