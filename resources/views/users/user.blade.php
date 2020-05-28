@@ -93,7 +93,8 @@
                                 {{ $users[$i]->email }}
                             </td>
                             <td class="text-muted">
-                                {{ rand(2, 10) }} days ago
+                           {{ floor((time() - (strtotime($users[$i]->created_at))) / 86400) }} Days ago
+                         
                             </td>
                             <td class="text-center">
                                 <div class="btn-group">

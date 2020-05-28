@@ -79,7 +79,7 @@
   
             <div class="block-options">
                 <button type="button" class="btn-block-option" onclick="One.helpers('print');">
-                    <i class="si si-printer mr-1"></i> Print Invoice
+                    <i class="si si-printer mr-1"></i> Print 
                 </button>
              </div>
         </div>
@@ -108,20 +108,26 @@
                         <p class="h3">PURCHASING</p>
 
                         <address>
-                        DATE : &nbsp;  {{ $purdetail->start_date  }}<br>
-                        PURCHASING# : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{ $prefix->purchase. $idFormat }} <br>
-                        DUE DATE# : &nbsp;  {{ $purdetail->due_date }} <br>
+                        ISSUE DATE : &nbsp;  {{ $purdetail->start_date  }}<br>
+                        PURCHASING : &nbsp; {{ $prefix->purchase. $idFormat }} <br>
+                        IMPORTANCE : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{ $purdetail->importance }} <br>
+                        DUE DATE : &nbsp;  {{ $purdetail->due_date }} <br>
 
                         </address>
+                        
                     </div>
-                    <!-- <div class="col-6 text-left font-size-sm" style="margin-top:5px;">
-                        <p class="h3">Bill To</p>
 
-                        <address>
-     
-                        </address>
-                    </div> -->
+
+                    <div class="col-6 text-left font-size-sm" style="margin-top:5px;">
+                        <span style="float:left;" class="h5">Subject:</span> &nbsp;  {{ $purdetail->subject }}   
+                    
+                    </div>
+
+                    <div class="col-6 text-right font-size-sm" >
+                        <label class="h5">Assigned To:</label> &nbsp; {{ $purdetail->employee->full_name}}
+                    </div>
                 </div>
+                
                 <div class="table-responsive push">
                     <table class="table table-bordered">
                         <thead>
@@ -151,7 +157,10 @@
                                 
                             </tr>
                         @endforeach
-
+                        <tr>
+                            <td colspan="4" class="font-w700 text-uppercase text-right bg-body-light">Total </td> 
+                            <td class="font-w700 text-right bg-body-light">BD  {{ number_format($purdetail->amount, 3) }}</td>
+                        </tr>
 
            
                    

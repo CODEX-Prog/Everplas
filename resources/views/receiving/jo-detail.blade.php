@@ -79,7 +79,7 @@
   
             <div class="block-options">
                 <button type="button" class="btn-block-option" onclick="One.helpers('print');">
-                    <i class="si si-printer mr-1"></i> Print Invoice
+                    <i class="si si-printer mr-1"></i> Print 
                 </button>
              </div>
         </div>
@@ -108,9 +108,9 @@
                         <p class="h3">Receiving</p>
 
                         <address>
-                        DATE : &nbsp;  {{ $jobOrder->start_date  }}<br>
-                        Receiving# : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{ $prefix->receiving. $idFormat }} <br>
-                        DUE DATE# : &nbsp;  {{ $jobOrder->due_date }} <br>
+                        ISSUE DATE : &nbsp;  {{ $jobOrder->start_date  }}<br>
+                        Receiving : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{ $prefix->receiving. $idFormat }} <br>
+                        DUE DATE : &nbsp;  {{ $jobOrder->due_date }} <br>
 
                         </address>
                     </div>
@@ -121,6 +121,14 @@
      
                         </address>
                     </div> -->
+                    <div class="col-6 text-left font-size-sm" style="margin-top:5px;">
+                        <span style="align:right; align:right;  " class="h5">Subject:</span> &nbsp;  {{ $jobOrder->subject }}   <br> <br>
+                    
+                    </div>
+
+                    <div class="col-6 text-right font-size-sm" >
+                        <label class="h5">Assigned To:</label> &nbsp; {{ $jobOrder->employee->full_name}}
+                    </div>
                 </div>
                 <div class="table-responsive push">
                     <table class="table table-bordered">
@@ -151,7 +159,10 @@
                                 
                             </tr>
                         @endforeach
-
+                        <tr>
+                            <td colspan="4" class="font-w700 text-uppercase text-right bg-body-light">Total </td> 
+                            <td class="font-w700 text-right bg-body-light">BD  {{ number_format($jobOrder->amount, 3) }}</td>
+                        </tr>
 
            
                    

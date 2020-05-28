@@ -122,9 +122,9 @@
                 <div class="content-header bg-white-5">
                     <!-- Logo -->
                     <a class="font-w600 text-dual" href="/">
-                        <i class="fa fa-circle-notch text-primary"></i>
-                        <span class="smini-hide">
-                            <span class="font-w700 font-size-h5">{{ $cominfo->name  }}</span> <span class="font-w400">1.0</span>
+                        <!-- <i class="fa fa-circle-notch text-primary"></i> -->
+                        <span  class="smini-hide">
+                            <span  class="font-w700 font-size-h5" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $cominfo->name  }}</span> 
                         </span>
                     </a>
                     <!-- END Logo -->
@@ -132,14 +132,14 @@
                     <!-- Options -->
                     <div>
                         <!-- Color Variations -->
-                        <div class="dropdown d-inline-block ml-3">
-                            <a class="text-dual font-size-sm" id="sidebar-themes-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                        <!-- <div class="dropdown d-inline-block ml-3"> -->
+                            <!-- <a class="text-dual font-size-sm" id="sidebar-themes-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
                                 <i class="si si-drop"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right font-size-sm smini-hide border-0" aria-labelledby="sidebar-themes-dropdown">
+                            </a> -->
+                            <!-- <div class="dropdown-menu dropdown-menu-right font-size-sm smini-hide border-0" aria-labelledby="sidebar-themes-dropdown"> -->
                                 <!-- Color Themes -->
                                 <!-- Layout API, functionality initialized in Template._uiHandleTheme() -->
-                                <a class="dropdown-item d-flex align-items-center justify-content-between" data-toggle="theme" data-theme="default" href="#">
+                                <!-- <a class="dropdown-item d-flex align-items-center justify-content-between" data-toggle="theme" data-theme="default" href="#">
                                     <span>Default</span>
                                     <i class="fa fa-circle text-default"></i>
                                 </a>
@@ -162,34 +162,34 @@
                                 <a class="dropdown-item d-flex align-items-center justify-content-between" data-toggle="theme" data-theme="{{ mix('css/themes/smooth.css') }}" href="#">
                                     <span>Smooth</span>
                                     <i class="fa fa-circle text-smooth"></i>
-                                </a>
+                                </a> -->
                                 <!-- END Color Themes -->
 
-                                <div class="dropdown-divider"></div>
+                                <!-- <div class="dropdown-divider"></div> -->
 
                                 <!-- Sidebar Styles -->
                                 <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                                <a class="dropdown-item" data-toggle="layout" data-action="sidebar_style_light" href="#">
+                                <!-- <a class="dropdown-item" data-toggle="layout" data-action="sidebar_style_light" href="#">
                                     <span>Sidebar Light</span>
                                 </a>
                                 <a class="dropdown-item" data-toggle="layout" data-action="sidebar_style_dark" href="#">
                                     <span>Sidebar Dark</span>
-                                </a>
+                                </a> -->
                                 <!-- Sidebar Styles -->
 
-                                <div class="dropdown-divider"></div>
+                                <!-- <div class="dropdown-divider"></div> -->
 
                                 <!-- Header Styles -->
                                 <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                                <a class="dropdown-item" data-toggle="layout" data-action="header_style_light" href="#">
+                                <!-- <a class="dropdown-item" data-toggle="layout" data-action="header_style_light" href="#">
                                     <span>Header Light</span>
                                 </a>
                                 <a class="dropdown-item" data-toggle="layout" data-action="header_style_dark" href="#">
                                     <span>Header Dark</span>
-                                </a>
+                                </a> -->
                                 <!-- Header Styles -->
-                            </div>
-                        </div>
+                            <!-- </div> -->
+                        <!-- </div> -->
                         <!-- END Themes -->
 
                         <!-- Close Sidebar, Visible only on mobile screens -->
@@ -725,7 +725,7 @@
                             Switcher Technology
                         </div>
                         <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-left">
-                            {{ $cominfo->name }} |  ERP 
+                            {{ $cominfo->name }} -  ERP  &nbsp;<span class="font-w400"> v 1.0</span>
                         </div>
                     </div>
                 </div>

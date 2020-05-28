@@ -116,7 +116,7 @@
                         <p class="h3">INVOICE</p>
 
                         <address>
-                        DATE : &nbsp;  {{ $LD->date  }}<br>
+                        ISSUE DATE : &nbsp;  {{ $LD->date  }}<br>
                         INVOICE# : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{ $prefix->invoice. $InvidFormats }} <br>
                         DUE DATE# : &nbsp;  {{ $LD->till_date }} <br>
 
@@ -142,6 +142,7 @@
                         </address>
                         @endif
                     </div>
+                    
                 </div>
                 <div class="table-responsive push">
                     <table class="table table-bordered">

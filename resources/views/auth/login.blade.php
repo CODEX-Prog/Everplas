@@ -155,7 +155,7 @@ MAIN CONTENT LAYOUT
 
                 <!-- Footer -->
                 <div class="font-size-sm text-center text-muted py-3">
-                <span class="font-w700 font-size-h5"><strong>{{ $cominfo->name }} - </strong> </span><span class="font-w400"> Powered by Switcher Technology </span> &copy; <span data-toggle="year-copy"></span>
+                <span class="font-w400 font-size-h6"> {{ $cominfo->name }} -  </span><span class="font-w400"> Powered by Switcher Technology </span> &copy; <span data-toggle="year-copy"></span>
                 </div>
                 <!-- END Footer -->
             </div>

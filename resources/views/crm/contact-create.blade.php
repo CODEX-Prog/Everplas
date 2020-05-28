@@ -100,6 +100,10 @@
                                 <label for="location">Country</label>
                                 <input type="text" class="form-control" id="location" name="location" required>
                             </div>
+                            <div class="form-group">
+                                <label for="location">City</label>
+                                <input type="text" class="form-control" id="location" name="location" required>
+                            </div>
 
                             <div class="form-group">
                                 <label for="location">Email</label>
