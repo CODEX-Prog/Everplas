@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Users;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -44,7 +45,7 @@ class UserController extends Controller
 
         $user = new User();
         $user->name = $name;
-        $user->password = $password;
+        $user->password = Hash::make($password);
         $user->email = $email;
         $user->full_name = $fullName;
         $user->user_view_permission = $userViewPermission;

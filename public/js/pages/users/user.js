@@ -480,6 +480,33 @@ jQuery(document).ready(jQuery('#permission-group').on('change', function () {
       });
     }
   });
+}),
+/**
+* Sales-Lead Employee Select2 implementation
+* */
+jQuery('.employee-select2').select2({
+  ajax: {
+    url: function url(params) {
+      if (params.term) {
+        return '/human/employees/' + params.term;
+      } else {
+        return '/human/employees';
+      }
+    },
+    dataType: 'json',
+    processResults: function processResults(data) {
+      var employees = data['employees'];
+      var employeeArr = employees.map(function (item) {
+        return {
+          id: item['id'],
+          text: item['full_name']
+        };
+      });
+      return {
+        results: employeeArr
+      };
+    }
+  }
 }), jQuery('.user-group-select2').select2({
   ajax: {
     url: function url(params) {

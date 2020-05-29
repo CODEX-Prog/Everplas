@@ -137,7 +137,7 @@
                                 <div class="col-lg-8 col-xl-12">
                                     <div class="form-group">
                                         <label for="employee_id">Employee</label>
-                                        <select class="user-group-select2 form-control ml-3" id="employee_id">
+                                        <select class="employee-select2 form-control ml-3" id="employee_id">
                                             <option value="-">Select Employee</option>
                                         </select>
                                     </div>
