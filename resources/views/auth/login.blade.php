@@ -115,7 +115,7 @@ MAIN CONTENT LAYOUT
                                 @endisset
                                 <div class="py-3">
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-lg form-control-alt" id="email" name="email" placeholder="Username">
+                                        <input type="text" class="form-control form-control-lg form-control-alt" id="email" name="email" placeholder="email">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-lg form-control-alt" id="password" name="password" placeholder="Password">
