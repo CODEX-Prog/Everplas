@@ -27,13 +27,11 @@ jQuery(document).ready(
     jQuery('#user-save-button').on('click', function () {
         var userTable = jQuery('#user-table').DataTable();
         var empid = $('#employee_id').val();
-        alert(empid);
         var fullName = $('#add-user-full-name').val();
         var userName = $('#add-username').val();
         var password = $('#add-user-password').val();
         var email = $('#add-user-email').val();
         var grid = $('#group_id').val();
-        alert(grid);
         if(fullName && userName && password && email  ) {
             if(isEmailAddress(email)) {
                 var data = {
