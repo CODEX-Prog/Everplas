@@ -137,8 +137,8 @@
                                 <div class="col-lg-8 col-xl-12">
                                     <div class="form-group">
                                         <label for="employee_id">Employee</label>
-                                        <select class="employee-select2 form-control ml-3" id="employee_id">
-                                            <option value="-">Select Employee</option>
+                                        <select class="employee-select2 form-control ml-3" name="employee_id" id="employee_id">
+                                            <option value="">Select Employee</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -163,7 +163,7 @@
 {{--                                           <option value="">Please select Group</option>--}}
 {{--                                        </select>--}}
                                         <select class="user-group-select2 form-control ml-3" id="group_id">
-                                            <option value="-">Please select Group</option>
+                                            <option value="">Please select Group</option>
                                         </select>
                                     </div>
                                    <div class="form-group special-permission-section-user" id="special-permission-section-user">
