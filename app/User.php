@@ -48,5 +48,14 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\CompanyInfo', 'foreign_key');
     }
 
+
+    /**
+     * Get the  record associated with the user.
+     */
+    public function employee()
+    {
+        return $this->belongsTo('App\Models\Employee');
+    }
+    
     
 }

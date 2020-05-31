@@ -85,4 +85,12 @@ class Employee extends Model
     {
         return $this->hasMany('App\Models\Lead');
     }
+
+    /**
+     * Get the user that owns the phone.
+     */
+    public function user()
+    {
+        return $this->hasOne('App\User', 'emp_id');
+    }
 }

@@ -34,6 +34,8 @@ class UserController extends Controller
         $password = $request->get('password');
         $email = $request->get('email');
         $fullName = $request->get('fullName');
+        $emp_id = $request->get('empid');
+        $gr_id = $request->get('grid');
         $userViewPermission = $request->get('userViewPermission');
         $userDeletePermission = $request->get('userDeletePermission');
         $userUpdatePermission = $request->get('userUpdatePermission');
@@ -46,8 +48,10 @@ class UserController extends Controller
         $user = new User();
         $user->name = $name;
         $user->password = Hash::make($password);
-        $user->email = $email;
+        $user->email = $email;  
         $user->full_name = $fullName;
+        $user->emp_id = $emp_id;
+        $user->grp_id = $gr_id;
         $user->user_view_permission = $userViewPermission;
         $user->user_delete_permission = $userDeletePermission;
         $user->user_update_permission = $userUpdatePermission;

@@ -103,7 +103,7 @@ var crmUpdatePermission = false;
 var crmCreatePermission = false;
 var userId;
 var trowId;
-var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 function isEmailAddress(str) {
   return str.match(pattern);
@@ -119,14 +119,20 @@ jQuery(document).ready(jQuery('#permission-group').on('change', function () {
   }
 }), jQuery('#user-save-button').on('click', function () {
   var userTable = jQuery('#user-table').DataTable();
+  var empid = $('#employee_id').val();
+  alert(empid);
   var fullName = $('#add-user-full-name').val();
   var userName = $('#add-username').val();
   var password = $('#add-user-password').val();
   var email = $('#add-user-email').val();
+  var grid = $('#group_id').val();
+  alert(grid);
 
-  if (fullName && userName && password && email) {
+  if (fullName && userName && password && email && empid && grid) {
     if (isEmailAddress(email)) {
       var data = {
+        empid: empid,
+        grid: grid,
         fullName: fullName,
         userName: userName,
         password: password,
@@ -499,14 +505,36 @@ jQuery('.employee-select2').select2({
       var employeeArr = employees.map(function (item) {
         return {
           id: item['id'],
-          text: item['full_name']
+          text: item['full_name'],
+          email: item['email']
         };
-      });
+      }); ////////////  TESTING
+
+      for (var x in employeeArr) {
+        console.log(employeeArr[x]['id']); //access value
+
+        console.log(employeeArr[x]['text']); //access the text
+
+        console.log(employeeArr[x]['email']); //access the text
+      }
+
       return {
         results: employeeArr
       };
     }
   }
+}), // EVENT TO SET VALUES ON SELECT
+jQuery('.employee-select2').on('select2:select', function (e) {
+  var data = e.params.data;
+  console.log("SELECTED", data);
+  console.log(data.id); //access value
+
+  console.log(data.text); //access the text
+
+  console.log(data.email); //access the text
+
+  $('#add-user-full-name').val(data.text).css("background-color", "rgb(240, 248, 255)");
+  $('#add-user-email').val(data.email).css("background-color", "rgb(240, 248, 255)");
 }), jQuery('.user-group-select2').select2({
   ajax: {
     url: function url(params) {
