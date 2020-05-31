@@ -29,11 +29,13 @@ jQuery(document).ready(
         var empid = $('#employee_id').val();
         var fullName = $('#add-user-full-name').val();
         var userName = $('#add-username').val();
-        var password = $('#add-user-password').val();
+        var password = $('#password').val();
+        var confirm_password = $('#password_confirmation').val();
         var email = $('#add-user-email').val();
         var grid = $('#group_id').val();
-        if(fullName && userName && password && email  ) {
+        if(fullName && userName && password && email && confirm_password ) {
             if(isEmailAddress(email)) {
+                if ( password == confirm_password ){
                 var data = {
                     empid: empid,
                     grid: grid,
@@ -201,8 +203,12 @@ jQuery(document).ready(
                         One.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: 'Create User Failed!'});
                     }
                 })
+                } else {
+                    Swal.fire('Password fields does not match!')
+                }
+
             } else {
-                alert('Please Enter valid Email')
+                Swal.fire('Please Enter valid Email')
             }
         } else {
             Swal.fire('Please Fill all Fields');

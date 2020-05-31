@@ -143,19 +143,26 @@
                                     </div>
                                     <div class="form-group">
                                        <label for="add-user-full-name">Full Name</label>
-                                       <input type="text" class="form-control" id="add-user-full-name" name="full-name" required>
+                                       <input type="text" class="form-control" id="add-user-full-name" name="full-name"  placeholder="full name" required>
                                     </div>
                                     <div class="form-group">
                                        <label for="add-username">Username</label>
-                                       <input type="text" class="form-control" id="add-username" name="username" required>
+                                       <input type="text" class="form-control" id="add-username" name="username"  placeholder="username" required>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                    <label for="password">Password</label>
+                                        <input type="password" class="form-control " id="password" name="password" placeholder="Password">
                                     </div>
                                     <div class="form-group">
-                                       <label for="add-user-password">Password</label>
-                                       <input type="password" class="form-control" id="add-user-password" name="password" required>
+                                    <label for="password_confirmation">Re-type Password</label>
+                                        <input type="password" class="form-control " id="password_confirmation" name="password_confirmation" placeholder="Password Confirm">
                                     </div>
+
                                     <div class="form-group">
-                                       <label for="add-user-email">eMail</label>
-                                       <input type="text" class="form-control" id="add-user-email" name="email">
+                                       <label for="add-user-email">Email</label>
+                                       <input type="text" class="form-control" id="add-user-email" name="email" placeholder="email">
                                     </div>
                                     <div class="form-group">
                                         <label for="group_id">Groups</label>
