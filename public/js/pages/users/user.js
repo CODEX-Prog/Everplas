@@ -128,7 +128,7 @@ jQuery(document).ready(jQuery('#permission-group').on('change', function () {
   var grid = $('#group_id').val();
   alert(grid);
 
-  if (fullName && userName && password && email && empid && grid) {
+  if (fullName && userName && password && email) {
     if (isEmailAddress(email)) {
       var data = {
         empid: empid,
@@ -160,7 +160,7 @@ jQuery(document).ready(jQuery('#permission-group').on('change', function () {
 
           if (result['status'] == 'success') {
             var user = result['user'];
-            var newRow = userTable.row.add([user['id'], user['full_name'], user['name'], '3 days ago', "<div>\n" + "</div>"]).draw();
+            var newRow = userTable.row.add([user['id'], user['full_name'], user['name'], '0 days ago', "<div>\n" + "</div>"]).draw();
             console.log('here new row: ', newRow.index());
             var newRowNode = newRow.node();
             $($(newRowNode).children()[0]).addClass('font-w600');

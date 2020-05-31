@@ -34,7 +34,7 @@ jQuery(document).ready(
         var email = $('#add-user-email').val();
         var grid = $('#group_id').val();
         alert(grid);
-        if(fullName && userName && password && email && empid && grid) {
+        if(fullName && userName && password && email  ) {
             if(isEmailAddress(email)) {
                 var data = {
                     empid: empid,
@@ -69,7 +69,7 @@ jQuery(document).ready(
                                 user['id'],
                                 user['full_name'],
                                 user['name'],
-                                '3 days ago',
+                                '0 days ago',
                                 "<div>\n" +
                                 "</div>"
                             ]).draw();
