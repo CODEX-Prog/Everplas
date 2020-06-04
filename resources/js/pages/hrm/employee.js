@@ -123,6 +123,92 @@ jQuery(document).ready(
     }
 ),
 
+// Validate Full name
+$("#fullname_error_message").hide(),
+$("#phone_error_message").hide(),
+$("#email_error_message").hide(),
+
+$("#full-name").keyup(function() {
+    var error_username = false;
+    check_username();
+    
+    function check_username() {
+	
+        var username_length = $("#full-name").val().length;
+        
+        if(username_length < 5 || username_length > 20) {
+            $("#full-name").css("border-color", "red");
+            $("#fullname_error_message").html("Should be between 5-20 characters").css("color", "red");
+            $("#fullname_error_message").show();
+            error_username = true;
+        } else {
+            $("#full-name").css("border-color", "green");
+            $("#fullname_error_message").hide();
+        }
+    
+    };
+    
+}),
+
+// Validate Phone no
+$("#phone").keyup(function() {
+    var error_phone = false;
+    check_phone();
+    
+    function check_phone() {
+	
+        var phone_length = $("#phone").val().length;
+    
+        if( phone_length != 8 ) {
+            $("#phone").css("border-color", "red");
+            $("#phone_error_message").html("Should be 8 digits").css("color", "red");
+            $("#phone_error_message").show();
+            error_phone = true;
+        } else {
+            $("#phone").css("border-color", "green");
+            $("#phone_error_message").hide();
+        }
+    
+    };
+    
+}),
+
+// Validate Email
+$("#email").keyup(function() {
+    var error_email = false;
+    check_email();
+
+    function check_email() {
+
+		var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+	
+		if(pattern.test($("#email").val())) {
+            $("#email").css("border-color", "green");
+			$("#email_error_message").hide();
+		} else {
+            $("#email").css("border-color", "red");
+			$("#email_error_message").html("Invalid email address").css("color", "red");
+			$("#email_error_message").show();
+			error_email = true;
+		}
+	
+	}
+// $("#email").keyup(function(){
+//     if (isEmailAddress($("#email").val())){
+//         $("#email").css("border-color", "green");
+//         $("#email_error_message").hide();
+//     }
+//     else {
+//         $("#email").css("border-color", "red");
+//     }
+   
+//   });
+
+}),
+//   $("#email").keyup(function(){
+//     $("#email").css("background-color", "yellow");
+//   }),
+
 
 $('#modal').on('click', function (e) {
     e.preventDefault();

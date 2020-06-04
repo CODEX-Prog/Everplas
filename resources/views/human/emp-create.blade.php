@@ -58,7 +58,7 @@
                 <h3 class="block-title">Employee Information</h3>
             </div>
             <div class="block-content block-content-full">
-                <form id="smart" enctype="multipart/form-data">
+                <form id="smart" name="smart" enctype="multipart/form-data">
 
                     @isset($errors)
                         @if ($errors->any())
@@ -76,6 +76,7 @@
                             <div class="form-group">
                                 <label for="full-name">Full Name</label>
                                 <input type="text" class="form-control" id="full-name" name="full-name" required>
+                                <span class="error_form" id="fullname_error_message"></span>
                             </div>
                             <div class="form-group">
                                 <label for="marital">Marital Status</label>
@@ -156,6 +157,7 @@
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" id="email" name="email" required>
+                                <span class="error_form" id="email_error_message"></span>
                             </div>
                             <div class="form-group">
                                 <label for="address">Address</label>
@@ -220,7 +222,8 @@
                         <div class="col-lg-4 col-x4">
                             <div class="form-group">
                                 <label for="phone">Phone Number</label>
-                                <input type="text" class="form-control" id="phone" name="phone" required>
+                                <input type="number" class="form-control" id="phone" name="phone" required>
+                                <span class="error_form" id="phone_error_message"></span>
                             </div>
                             <div class="form-group">
                                 <label for="birthday">Date of birth</label>
@@ -354,7 +357,7 @@
 
                                     <div class="form-group">
                                        <label for="add-user-email">Email</label>
-                                       <input type="text" class="form-control" id="add-user-email" name="email" placeholder="email">
+                                       <input type="email" class="form-control" id="add-user-email" name="email" placeholder="email">
                                     </div>
                                     <div class="form-group">
                                         <label for="group_id">Groups</label>
