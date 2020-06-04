@@ -497,6 +497,17 @@ jQuery(document).ready(function () {
             telephone: item['telephone'],
             Email: item['Email']
           };
+        });
+        var contactArray = contacts.map(function (item, index) {
+          return {
+            id: "con" + item['id'],
+            text: item['contact_name'],
+            address: item['contact_address'],
+            country: item['contact_country'],
+            city: item['contact_city'],
+            telephone: item['contact_telephone'],
+            Email: item['contact_email']
+          };
         }); ////////////  TESTING
         // for(var x in companyArray){
         //     console.log(companyArray[x]['id']);//access value
@@ -510,12 +521,6 @@ jQuery(document).ready(function () {
         //     // $('#phone').val(companyArray[x]['telephone']).css("background-color", "rgb(240, 248, 255)");
         //   }
 
-        var contactArray = contacts.map(function (item, index) {
-          return {
-            id: "con" + item['id'],
-            text: item['contact_name']
-          };
-        });
         return {
           results: [].concat(_toConsumableArray(companyArray), _toConsumableArray(contactArray))
         };
