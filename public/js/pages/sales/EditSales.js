@@ -898,8 +898,8 @@ function getAllProductsInfo() {
 
 function getAllEditProductsInfo() {
   var urrl = window.location.href;
-  var serached = urrl.substr(urrl.search("leads"), urrl.lastIndexOf("edit"));
-  alert(urrl.match(numberPattern));
+  var serached = urrl.substr(urrl.search("leads"), urrl.lastIndexOf("edit")); // alert(urrl.match( numberPattern ));
+
   return $.ajax({
     method: "GET",
     url: "/leads/edit/" + serached.match(numberPattern),
@@ -920,11 +920,11 @@ function getAllEditProductsInfo() {
 
 function getAllLeadsInfo() {
   var urrl = window.location.href;
-  var serached = urrl.substr(urrl.search("leads"), urrl.lastIndexOf("edit"));
-  alert(urrl.search("leads"));
-  alert(urrl);
-  alert(urrl.substr(urrl.search("leads"), urrl.lastIndexOf("edit")));
-  alert("done" + serached.match(numberPattern));
+  var serached = urrl.substr(urrl.search("leads"), urrl.lastIndexOf("edit")); // alert(urrl.search("leads"));
+  // alert(urrl);
+  // alert(urrl.substr(urrl.search("leads"), urrl.lastIndexOf("edit")) );
+  // alert("done"+serached.match( numberPattern ));
+
   return $.ajax({
     method: "GET",
     url: "/leads/edits/" + serached.match(numberPattern),
