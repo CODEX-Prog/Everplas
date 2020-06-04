@@ -1003,7 +1003,7 @@ return  $.ajax({
 function getAllEditProductsInfo() {
   
     var urrl = window.location.href; 
-  
+
     alert(urrl.match( numberPattern ));
     return  $.ajax({
             method: "GET",
@@ -1028,7 +1028,11 @@ function getAllEditProductsInfo() {
 function getAllLeadsInfo() {
    
     var urrl = window.location.href; 
-    alert(urrl.match( numberPattern ));
+    var serached = urrl.substr(urrl.search("leads"), urrl.lastIndexOf("edit"));
+    alert(urrl.search("leads"));
+    alert(urrl);
+    alert(urrl.substr(urrl.search("leads"), urrl.lastIndexOf("edit")) );
+    alert("done"+serached.match( numberPattern ));
     return  $.ajax({
             method: "GET",
             url: "/leads/edits/"+urrl.match( numberPattern ),
