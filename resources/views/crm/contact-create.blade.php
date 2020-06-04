@@ -77,13 +77,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name">Telephone</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+                                <label for="Telephone">Telephone</label>
+                                <input type="text" class="form-control" id="Telephone" name="Telephone" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="name">Mobile 2</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+                                <label for="Mobile">Mobile 2</label>
+                                <input type="text" class="form-control" id="Mobile" name="Mobile" required>
                             </div>
 
                             <div class="form-group">
@@ -106,8 +106,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="location">Email</label>
-                                <input type="text" class="form-control" id="location" name="location" required>
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" required>
                             </div>
 
                             <div class="form-group">

@@ -156,16 +156,16 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="create-contact-telephone">Telephone</label>
-                                        <input type="text" class="form-control" id="create-contact-telephone" name="telephone">
+                                        <input type="number" class="form-control" id="create-contact-telephone" name="telephone" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="create-contact-mobile2">Mobile 2</label>
-                                        <input type="text" class="form-control" id="create-contact-mobile2" name="mobile2">
+                                        <input type="number" class="form-control" id="create-contact-mobile2" name="mobile2" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="create-contact-company">Company</label>
-                                        <select class="create-contact-company-select2 form-control" id="create-contact-company" name="company-id">
-                                            <option value="-">Select Company</option>
+                                        <select class="create-contact-company-select2 form-control" id="create-contact-company" name="company-id" required>
+                                            <option value="">Select Company</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -184,11 +184,11 @@
                                 <div class="col-lg-4 col-xl-6">
                                     <div class="form-group">
                                         <label for="create-contact-email">eMail</label>
-                                        <input type="text" class="form-control" id="create-contact-email" name="email">
+                                        <input type="text" class="form-control" id="create-contact-email" name="email" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="create-contact-mobile">Mobile</label>
-                                        <input type="text" class="form-control" id="create-contact-mobile" name="mobile" required>
+                                        <input type="number" class="form-control" id="create-contact-mobile" name="mobile" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="create-contact-job">Job Title</label>
@@ -196,7 +196,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="create-contact-group">Group</label>
-                                        <select class="create-contact-group-select2 form-control" id="create-contact-group" name="group-id">
+                                        <select class="create-contact-group-select2 form-control" id="create-contact-group" name="group-id" required>
                                             <option value="-">Select Employee</option>
                                         </select>
                                     </div>

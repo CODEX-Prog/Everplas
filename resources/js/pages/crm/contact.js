@@ -40,6 +40,7 @@ jQuery(document).ready(
                     var buttonWrapper = $($(newRowNode).children()[5]).children()[0];
                     $(buttonWrapper).addClass('btn-group');
                     buttonWrapper.innerHTML =
+
                         "<button type=\"button\" class=\"btn btn-sm btn-primary edit-contact-btn\"\n" +
                         "</button>\n" +
                         "<button type=\"button\" class=\"btn btn-sm btn-primary delete-contact-btn\"\n" +
@@ -148,6 +149,7 @@ jQuery(document).ready(
                 } else {
                     One.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: 'Create Contact Failed!'});
                 }
+                location.reload(true);
             },
             error: function () {
                 console.log("here user save error: ");

@@ -236,6 +236,8 @@ jQuery(document).ready(jQuery('#create-contact-form').on('submit', function (e) 
           message: 'Create Contact Failed!'
         });
       }
+
+      location.reload(true);
     },
     error: function error() {
       console.log("here user save error: ");
