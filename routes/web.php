@@ -72,7 +72,7 @@ Route::get('/users/getuser', 'Users\UserController@index');
 Route::post('/users/createuser', 'Users\UserController@create');
 Route::post('/users/updateuser', 'Users\UserController@update');
 Route::post('/users/deleteuser', 'Users\UserController@delete');
-
+// Route::post('/check', 'Users\UserController@create');
 // Create, Read, Update, Delete Group
 Route::get('/users/getgroup', 'Users\GroupController@index');
 Route::get('/users/getgroups/{name?}', 'Users\GroupController@getGroupsByName');
@@ -251,10 +251,11 @@ Route::post('human/down', 'ZipController@downloadZip')->name('human.zip');
 
 Route::get('/human/getemployee', 'Hrm\EmployeeController@index');
 Route::get('/human/getemployees/{name?}', 'Hrm\EmployeeController@getEmployeesByName');
-Route::post('/human/createemployee', 'Hrm\EmployeeController@create')->name('human.employee-create');
+// Route::post('/human/createemployee', 'Hrm\EmployeeController@create')->name('human.employee-create');
 Route::post('/human/updateemployee', 'Hrm\EmployeeController@update')->name('human.employee.update');
 Route::post('/human/deleteemployee', 'Hrm\EmployeeController@delete')->name('human.employee.delete');
 
+Route::post('/human/create', 'Hrm\EmployeeController@createEmp')->name('human.employee-create');
 
 
 // Calendar module routes

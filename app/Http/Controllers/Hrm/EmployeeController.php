@@ -238,5 +238,86 @@ class EmployeeController extends Controller
                  ->original_filename, ['Content-Type' => $emp_doc->mime]);
      }
 
+
+     public function createEmp(Request $request) {
+
+        $employee = new Employee();
+
+        request()->validate([
+            'file' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'files.*' => 'mimes:jpeg,png,jpg,gif,svg,doc,pdf,docx,zip|max:2048',
+        ]);
+
+        $employee->full_name = $request->get('fullname');
+        $employee->email = $request->get('email');
+        $employee->birthday = $request->get('dob');
+        $employee->marital = $request->get('marital');
+        $employee->phone = $request->get('phone');
+        $employee->gender = $request->get('gender');
+        $employee->nationality = $request->get('nationality');
+        $employee->address = $request->get('address');
+        $employee->cpr_number = $request->get('cprno');
+        $employee->cpr_exp = date('Y-m-d', strtotime($request->get('cprExp')));
+        $employee->passport_number = $request->get('passno');
+        $employee->passport_exp = date('Y-m-d', strtotime($request->get('passExp')));
+        $employee->working_as = $request->get('workingAs');
+        $employee->department_id = $request->get('department');
+        $employee->destination = $request->get('designation');
+        $employee->join_date = date('Y-m-d', strtotime($request->get('joiningDate')));
+        $employee->end_date = date('Y-m-d', strtotime($request->get('endDate')));
+        $employee->leaves_day = $request->get('leaveDays');
+        $employee->salary_transfer_type = $request->get('SalaryTransferType');
+        $employee->basic_salary = $request->get('basicSalary');
+        $employee->employee_cosi = $request->get('empCosi');
+        $employee->company_cosi = $request->get('companyCosi');
+        $employee->lmra_monthly_fee = $request->get('lmraFee');
+        $employee->lmra_visa_fee = $request->get('lmraVisaFee');
+        $employee->visa_exp_date = date('Y-m-d', strtotime($request->get('passExp')));
+        $employee->bank_id = $request->get('Bank');
+        $employee->iban = $request->get('iban');
+        $employee->short_name = $request->get('marital');
+        $employee->driving_license = $request->get('DrivingLicence');
+        $employee->blood_type = $request->get('bloodType');
+        $employee->emerg_contact_name = $request->get('emrgContact');
+        $employee->emerg_contact_number = $request->get('emrgContactNum');
+        $employee->emerg_contact_relation = $request->get('emrgContactRel');
+        $employee->commotion_type = $request->get('ComotionsT');
+      
+        if($request->hasFile('file')) {
+            
+            $personalPhoto = $request->file('file');
+            $name = Str::slug($request->input('fullname')).'_'.'personal'.'_'.time();
+            $folder = '/uploads/hrm/personal/';
+            $filePath = $folder . $name. '.' . $personalPhoto->getClientOriginalExtension();
+            $employee->personal_photo = $filePath;
+            $this->uploadOne($personalPhoto, $folder, 'public', $name);
+        }
+
+
+        if($request->hasFile('files')) {
+            $i = 0;
+            $docCopiesPath = '';
+            $docCopies = $request->file('files');
+            foreach ($docCopies as $docCopy) {
+                $name = Str::slug($request->input('fullname')).'_'.'doc_copy'.'_'.$i.'_'.time();
+                $folder = '/uploads/hrm/doc-copies/';
+                $filePath = $folder . $name. '.' . $docCopy->getClientOriginalExtension();
+                $docCopiesPath = $docCopiesPath.','.$filePath;
+                $this->uploadOne($docCopy, $folder, 'public', $name);
+                $i++;
+            }
+            $employee->doc_copies = $docCopiesPath;
+        }
+
+       
+        try {
+            $employee->save();
+            return json_encode(['status' => 'success', 'employee' => $employee]);
+        } catch (\Exception $e) {
+            return json_encode(['status' => 'error', 'message' => $e->getMessage()]);
+        }
+
+      }
+
     
 }

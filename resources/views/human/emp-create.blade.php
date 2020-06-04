@@ -2,6 +2,7 @@
 
 @section('css_before')
 <!-- Page JS Plugins CSS -->
+<link rel="stylesheet" href="{{ asset('js/plugins/sweetalert2/sweetalert2.min.css') }}">
 <link rel="stylesheet" href="{{ asset('js/plugins/datatables/dataTables.bootstrap4.css') }}">
 <link rel="stylesheet" href="{{ asset('js/plugins/datatables/buttons-bs4/buttons.bootstrap4.min.css') }}">
 <link rel="stylesheet" href="{{ asset('js/plugins/select2/css/select2.min.css') }}">
@@ -26,6 +27,7 @@
 <!-- Page JS Code -->
 <script src="{{ asset('js/pages/hrm/tables_datatables.js') }}"></script>
 <script src="{{ asset('js/pages/hrm/create.js') }}"></script>
+<script src="{{ asset('js/pages/hrm/employee.js') }}"></script>
 @endsection
 
 @section('content')
@@ -56,8 +58,8 @@
                 <h3 class="block-title">Employee Information</h3>
             </div>
             <div class="block-content block-content-full">
-                <form name="employee-form" id="employee-form" action="{{ route('human.employee-create') }}" method="post" enctype="multipart/form-data">
-                    @csrf
+                <form id="smart" enctype="multipart/form-data">
+
                     @isset($errors)
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -166,7 +168,7 @@
                             <div class="form-group">
                                 <label for="department-id">Department</label>
                                 <select class="create-employee-department-select2 form-control" id="department-id" name="department-id" required>
-                                    <option value="-">Please select Department</option>
+                                    <option value="">Please select Department</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -271,11 +273,11 @@
                             </div>
                             <div class="form-group" style="text-align: right; padding-top: 36px;">
                                 <a href="{{ route('human.list') }}" class="mr-3">
-                                    <button type="button" class="btn btn-sm btn-light cancel-btn" style="padding: 5px 30px;">
+                                    <button type="button"  class="btn btn-sm btn-light cancel-btn" style="padding: 5px 30px;">
                                         Cancel
                                     </button>
                                 </a>
-                                <button type="submit" class="btn btn-sm btn-primary create-btn" style="padding: 5px 30px;">
+                                <button type="submit"  data-toggle="modal" data-target="#exampleModalCenter"  class="btn btn-sm btn-primary " style="padding: 5px 30px;">
                                     <i class="fa fa-check mr-1"></i>
                                     Save
                                 </button>
@@ -287,4 +289,131 @@
         </div>
     </div>
     <!-- END Page Content -->
+
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Create User Account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Do you also want to create User account for this employee ?
+      </div>
+      <div class="modal-footer">
+        <button type="submit" data-dismiss="modal" class="btn btn-secondary create-withoutuser" id="create-withoutuser">Save without User</button>
+        <button type="submit"  class="btn btn-primary create-user" id="create-user" data-dismiss="modal" data-toggle="modal" data-target="#modal-block-fadein-user">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Fade In Block Modal -->
+    <div class="modal fade" id="modal-block-fadein-user" tabindex="-1" role="dialog" aria-labelledby="modal-block-large" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="block block-themed block-transparent mb-0">
+                    <div class="block-header bg-primary-dark">
+                        <i class="si si-magnifier-add pr-2"></i>
+                        <h3 class="block-title">New User</h3>
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                                <i class="fa fa-fw fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="block-content font-size-sm">
+                        <form  enctype="multipart/form-data">
+                            <div class="row push">
+                                <div class="col-lg-8 col-xl-12">
+
+                                    <div class="form-group">
+                                       <label for="add-user-full-name">Full Name</label>
+                                       <input type="text" class="form-control" id="add-user-full-name" name="full-name"  placeholder="full name" required>
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="add-username">Username</label>
+                                       <input type="text" class="form-control" id="add-username" name="username"  placeholder="username" required>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                    <label for="password">Password</label>
+                                        <input type="password" class="form-control " id="password" name="password" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                    <label for="password_confirmation">Re-type Password</label>
+                                        <input type="password" class="form-control " id="password_confirmation" name="password_confirmation" placeholder="Password Confirm">
+                                    </div>
+
+                                    <div class="form-group">
+                                       <label for="add-user-email">Email</label>
+                                       <input type="text" class="form-control" id="add-user-email" name="email" placeholder="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="group_id">Groups</label>
+{{--                                        <select class="form-control permission-group" id="permission-group" name="group_id" required >--}}
+{{--                                           <option value="">Please select Group</option>--}}
+{{--                                        </select>--}}
+                                        <select class="user-group-select2 form-control ml-3" id="group_id">
+                                            <option value="">Please select Group</option>
+                                        </select>
+                                    </div>
+                                   <div class="form-group special-permission-section-user" id="special-permission-section-user">
+                                        <label for="email">Special Permission</label>
+                                        <label class="d-block">Users & Groups</label>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="checkbox" class="custom-control-input" id="user-view-permission" name="user-view-permission">
+                                            <label class="custom-control-label" for="user-view-permission">View</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="checkbox" class="custom-control-input" id="user-delete-permission" name="user-delete-permission">
+                                            <label class="custom-control-label" for="user-delete-permission">Delete</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="checkbox" class="custom-control-input" id="user-update-permission" name="user-update-permission">
+                                            <label class="custom-control-label" for="user-update-permission">Update</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="checkbox" class="custom-control-input" id="user-create-permission" name="user-create-permission">
+                                            <label class="custom-control-label" for="user-create-permission">Create</label>
+                                        </div>
+                                        <label class="d-block">CRM</label>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="checkbox" class="custom-control-input" id="crm-view-permission" name="crm-view-permission">
+                                            <label class="custom-control-label" for="crm-view-permission">View</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="checkbox" class="custom-control-input" id="crm-delete-permission" name="crm-delete-permission">
+                                            <label class="custom-control-label" for="crm-delete-permission">Delete</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="checkbox" class="custom-control-input" id="crm-update-permission" name="crm-update-permission">
+                                            <label class="custom-control-label" for="crm-update-permission">Update</label>
+                                        </div>
+                                        <div class="custom-control custom-switch custom-control-inline">
+                                            <input type="checkbox" class="custom-control-input" id="crm-create-permission" name="crm-create-permission">
+                                            <label class="custom-control-label" for="crm-create-permission">Create</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="block-content block-content-full text-right border-top">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success user-save-button" id="user-save-button"><i class="fa fa-check mr-1"></i>Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Fade In Block Modal -->
+
 @endsection
