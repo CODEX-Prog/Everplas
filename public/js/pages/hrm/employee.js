@@ -210,6 +210,17 @@ jQuery('.user-group-select2').select2({
       };
     }
   }
+}), $('#modal').on('click', function (e) {
+  e.preventDefault();
+
+  if ($('#full-name').val() === '' || $('#marital').val() === '' || $('#nationality').val() === '' || $('#nationality').val() === '' || $('#passport-number').val() === '' || $('#passport-number').val() === '' || $('#passport-number').val() === '' || $('#working-as').val() === '' || $('#join-date').val() === '' || $('#salary-transfer-type').val() === '' || $('#lmra-monthly-fee').val() === '' || $('#visa-exp-date').val() === '' || $('#driving-license').val() === '' || $('#commotion-type').val() === '' || $('#email').val() === '' || $('#gender').val() === '' || $('#address').val() === '' || $('#cpr-exp-date').val() === '' || $('#department-id').val() === '' || $('#end-date').val() === '' || $('#basic-salary').val() === '' || $('#company-cosi').val() === '' || $('#bank-id').val() === '' || $('#personal-photo').val() === '' || $('#emerg-contact-name').val() === '' || $('#emg-contact-relation').val() === '' || $('#phone').val() === '' || $('#birthday').val() === '' || $('#cpr-number').val() === '' || $('#passport-exp-date').val() === '' || $('#destination').val() === '' || $('#leaves-day').val() === '' || $('#employee-cosi').val() === '' || $('#lmra-visa-fee').val() === '' || $('#iban').val() === '' || $('#blood-type').val() === '' || $('#emerg-contact-number').val() === '') {
+    $("#exampleModalCenter").modal("hide");
+    Swal.fire('Please Fill all Fields');
+    return e.preventDefault();
+  } else {
+    $("#exampleModalCenter").modal("show");
+    return e.preventDefault();
+  }
 }), $('#smart').submit(function (e) {
   // Show some validation message here...
   // var values = $(this).serialize();

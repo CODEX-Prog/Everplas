@@ -277,7 +277,7 @@
                                         Cancel
                                     </button>
                                 </a>
-                                <button type="submit"  data-toggle="modal" data-target="#exampleModalCenter"  class="btn btn-sm btn-primary " style="padding: 5px 30px;">
+                                <button type="submit" id="modal"   data-target="#exampleModalCenter"  class="btn btn-sm btn-primary " style="padding: 5px 30px;">
                                     <i class="fa fa-check mr-1"></i>
                                     Save
                                 </button>
