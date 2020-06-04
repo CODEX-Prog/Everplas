@@ -898,10 +898,11 @@ function getAllProductsInfo() {
 
 function getAllEditProductsInfo() {
   var urrl = window.location.href;
+  var serached = urrl.substr(urrl.search("leads"), urrl.lastIndexOf("edit"));
   alert(urrl.match(numberPattern));
   return $.ajax({
     method: "GET",
-    url: "/leads/edit/" + urrl.match(numberPattern),
+    url: "/leads/edit/" + serached.match(numberPattern),
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     },
@@ -926,7 +927,7 @@ function getAllLeadsInfo() {
   alert("done" + serached.match(numberPattern));
   return $.ajax({
     method: "GET",
-    url: "/leads/edits/" + urrl.match(numberPattern),
+    url: "/leads/edits/" + serached.match(numberPattern),
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     },
