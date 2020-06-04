@@ -24,7 +24,7 @@ jQuery(document).ready(
         }
     }),
 
-    jQuery('#user-save-button').on('click', function () {
+    jQuery('#user-save-button').on('click', function () {                               
         var userTable = jQuery('#user-table').DataTable();
         var empid = $('#employee_id').val();
         var fullName = $('#add-user-full-name').val();
@@ -379,6 +379,7 @@ jQuery(document).ready(
                                 'Your file has been deleted.',
                                 'success'
                             )
+                            location.reload(true);
                         } else {
                             One.helpers('notify', {type: 'success', icon: 'fa fa-check mr-1', message: 'Delete User Success'});
                         }

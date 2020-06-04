@@ -373,6 +373,7 @@ jQuery('.delete-btn').click(function () {
             self.parent().parent().parent().addClass('selected');
             employeeTable.row('.selected').remove().draw(false);
             Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+            location.reload(true);
           } else {
             One.helpers('notify', {
               type: 'success',

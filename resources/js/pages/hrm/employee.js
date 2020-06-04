@@ -302,6 +302,7 @@ jQuery('.create-user').click(function () {
                                 'Your file has been deleted.',
                                 'success'
                             )
+                            location.reload(true);
                         } else {
                             One.helpers('notify', {type: 'success', icon: 'fa fa-check mr-1', message: 'Delete Employee Failed!'});
                         }
@@ -422,7 +423,7 @@ jQuery('.create-user').click(function () {
 
 
                     jQuery('#modal-block-fadein-user').modal('hide');
-                    $(location).attr('href', 'http://erp.co/human/employee')
+                    $(location).attr('href', 'http://erp.co/human/employee');
 
 
                 } else {

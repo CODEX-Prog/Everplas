@@ -470,6 +470,7 @@ jQuery(document).ready(jQuery('#permission-group').on('change', function () {
             self.parent().parent().parent().addClass('selected');
             userTable.row('.selected').remove().draw(false);
             Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+            location.reload(true);
           } else {
             One.helpers('notify', {
               type: 'success',
