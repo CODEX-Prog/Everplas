@@ -155,7 +155,7 @@
                                        <input type="text" class="form-control" id="create-contact-name" name="contact-name" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="create-contact-telephone">Telephone</label>
+                                        <label for="create-contact-telephone"></label>
                                         <input type="number" class="form-control" id="create-contact-telephone" name="telephone" required>
                                     </div>
                                     <div class="form-group">
